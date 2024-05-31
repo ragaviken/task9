@@ -1,0 +1,155 @@
+Q.NO:1  Write a program to check whether a given string is a palindrome or not using for loop and if-else statement.
+
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        // Example input string
+        String input = "madam";
+        
+        // Convert the string to lower case to make the palindrome check case insensitive
+        String lowerCaseInput = input.toLowerCase();
+        
+        // Initialize a boolean variable to keep track of whether the string is a palindrome
+        boolean isPalindrome = true;
+        
+        // Get the length of the string
+        int length = lowerCaseInput.length();
+        
+        // Use a for loop to compare characters from both ends of the string
+        for (int i = 0; i < length / 2; i++) {
+            if (lowerCaseInput.charAt(i) != lowerCaseInput.charAt(length - 1 - i)) {
+                isPalindrome = false;
+                break; // Exit the loop if characters don't match
+            }
+        }
+        
+        // Print the result based on the value of isPalindrome
+        if (isPalindrome) {
+            System.out.println(input + " is a palindrome.");
+        } else {
+            System.out.println(input + " is not a palindrome.");
+        }
+    }
+}
+
+Q.NO:2 Write a program that reads in a string from the user and uses a loop to reverse the order of the characters in the string. Then, output the reversed string.
+
+public class ReverseString {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a string
+        System.out.print("Enter a string: ");
+        String originalString = scanner.nextLine();
+
+        // Initialize an empty string to hold the reversed string
+        String reversedString = "";
+
+        // Use a loop to reverse the order of characters in the original string
+        for (int i = originalString.length() - 1; i >= 0; i--) {
+            reversedString += originalString.charAt(i);
+        }
+
+        // Output the reversed string
+        System.out.println("Reversed string: " + reversedString);
+
+        // Close the scanner to avoid resource leaks
+        scanner.close();
+    }
+}
+
+Q,NO:3 Write a program to print the given below pattern.
+
+Sample Input:
+
+4
+
+Sample Output:
+
+1
+
+23
+
+456
+
+789 10
+
+public class NumberPattern {
+    public static void main(String[] args) {
+        int n = 4;  // Sample input
+        int num = 1;  // Start with the number 1
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println();  // Move to the next line after each row
+        }
+    }
+}
+
+Q,NO:4 
+
+public class NumberPyramid {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        for (int i = 1; i <= rows; i++) {
+            // Print leading spaces
+            for (int j = i; j < rows; j++) {
+                System.out.print(" ");
+            }
+            // Print numbers
+            for (int k = 1; k <= i; k++) {
+                System.out.print(k + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+Q.NO:5
+
+
+public class GradingSystem {
+    
+    // Method to get the grade based on marks
+    public static String getGrade(int marks) {
+        if (marks >= 90 && marks <= 100) {
+            return "S";
+        } else if (marks >= 80 && marks < 90) {
+            return "A";
+        } else if (marks >= 70 && marks < 80) {
+            return "B";
+        } else if (marks >= 60 && marks < 70) {
+            return "C";
+        } else if (marks >= 50 && marks < 60) {
+            return "D";
+        } else if (marks >= 0 && marks < 50) {
+            return "F";
+        } else {
+            return "Invalid marks";
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user to enter the marks
+        System.out.println("Enter the marks: ");
+        int marks = scanner.nextInt();
+        
+        // Get the grade for the entered marks
+        String grade = getGrade(marks);
+        
+        // Print the grade
+        System.out.println("The grade is: " + grade);
+        
+        scanner.close();
+    }
+}
